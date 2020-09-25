@@ -1,17 +1,13 @@
 <template>
-<h1>{{ count }}</h1>
-<h1>{{ double }}</h1>
-{{number}}
-<button @click="increase">+1</button>
-<button @click="play">+1</button>
+  <h1>{{ count }}</h1>
+  <h1>{{ double }}</h1>
+  {{ number }}
+  <button @click="increase">+1</button>
+  <button @click="play">+1</button>
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  ref,
-  computed
-} from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 export default defineComponent({
   name: "Hello",
@@ -24,11 +20,11 @@ export default defineComponent({
     const increase = () => {
       count.value++;
     };
-    const number = ref(1)
+    const number = ref(1);
     const play = () => {
       number.value++;
-      console.log(number.value)
-    }
+      console.log(number.value);
+    };
 
     return {
       count,

@@ -1,38 +1,32 @@
 <template>
-<div class="about">
-  <h1>{{ count }}</h1>
-  <h1>{{ double }}</h1>
-  <button @click="increase">+1</button>
-</div>
+  <div class="about">
+    <h1>{{ count }}</h1>
+    <h1>{{ double }}</h1>
+    <button @click="increase">+1</button>
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  ref,
-  toRefs,
-  reactive
-} from 'vue'
+import { computed, defineComponent, toRefs, reactive } from "vue";
 interface DataProps {
-  double: number,
-    count: number,
-    increase: () => void
+  double: number;
+  count: number;
+  increase: () => void;
 }
 export default defineComponent({
-  name: 'jill',
+  name: "About",
   setup() {
     const data: DataProps = reactive({
       double: computed(() => data.count * 2),
       count: 2,
       increase: () => {
-        data.count++
+        data.count++;
       }
-    })
-    const refData = toRefs(data)
+    });
+    const refData = toRefs(data);
     return {
       ...refData
-    }
+    };
   }
-})
+});
 </script>
