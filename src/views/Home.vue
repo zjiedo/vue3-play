@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <!-- <HelloWorld /> -->
+    <Ref />
   </div>
 </template>
 
@@ -17,12 +18,14 @@ import {
   onRenderTracked,
   onRenderTriggered
 } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+// import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Ref from "@/components/Ref.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
-    HelloWorld
+    // HelloWorld,
+    Ref
   },
   setup() {
     onBeforeMount(() => {
