@@ -11,7 +11,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onBeforeUpdate, onUpdated } from "vue";
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated
+} from "vue";
 export default defineComponent({
   name: "Ref",
   setup() {
