@@ -1,8 +1,8 @@
 import { ref } from "vue";
 import axios from "axios";
 
-function useURLLoader(url: string) {
-  const result = ref(null);
+function useURLLoader<T>(url: string) {
+  const result = ref<T | null>(null);
   const loading = ref(true);
   const loaded = ref(false);
   const error = ref(null);
@@ -28,3 +28,34 @@ function useURLLoader(url: string) {
 }
 
 export default useURLLoader;
+
+// import { ref } from "vue";
+// import axios from "axios";
+
+// function useURLLoader(url: string) {
+//   const result = ref(null);
+//   const loading = ref(true);
+//   const loaded = ref(false);
+//   const error = ref(null);
+
+//   axios
+//     .get(url)
+//     .then(rawData => {
+//       loading.value = false;
+//       loaded.value = true;
+//       result.value = rawData.data;
+//     })
+//     .catch(e => {
+//       error.value = e;
+//       loading.value = false;
+//     });
+
+//   return {
+//     loading,
+//     loaded,
+//     error,
+//     result
+//   };
+// }
+
+// export default useURLLoader;
