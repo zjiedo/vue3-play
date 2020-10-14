@@ -1,23 +1,30 @@
 <template>
   <div class="home">
-    <Lifecyle />
+    <!-- <Lifecyle />
     <Ref />
-    <Reactive />
+    <Reactive /> -->
+    <MousePosition />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Ref from "@/components/Ref.vue";
-import Reactive from "@/components/Reactive.vue";
-import Lifecyle from "@/components/lifecyle.vue";
+import * as vue from "vue";
+// import Ref from "@/components/Ref.vue";
+// import Reactive from "@/components/Reactive.vue";
+// import Lifecyle from "@/components/lifecyle.vue";
+import MousePosition from "@/components/MousePosition.vue";
 
 export default defineComponent({
   name: "Home",
   components: {
-    Reactive,
-    Ref,
-    Lifecyle
+    // Reactive,
+    // Ref,
+    // Lifecyle,
+    MousePosition
+  },
+  setup() {
+    console.log(vue);
   }
 });
 </script>
