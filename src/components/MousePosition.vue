@@ -16,7 +16,7 @@ import useURLLoader from "@/hooks/useURLLoader";
 
 export default defineComponent({
   name: "MousePosition",
-  setup() {
+  async setup() {
     // const x = ref(0);
     // const y = ref(0);
     // const updateMouse = (e: MouseEvent) => {
@@ -32,7 +32,7 @@ export default defineComponent({
     //   document.removeEventListener("click", updateMouse)
     // });
     const { x, y } = UseMousePositon();
-    const { result, loading, loaded, error } = useURLLoader("https://dog.ceo/api/breeds/image/random");
+    const { result, loading, loaded, error } = useURLLoader("https://dog.ceo/api/breeds/image");
     // vs Minix 清除来源， 可以给x, y 设置别名， 可以脱离组件存在
 
     return {
